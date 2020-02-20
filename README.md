@@ -41,6 +41,12 @@ Then run: `java -jar taxii-server-micronaut-0.5-all.jar`
 
 Start the server and go to: `http://localhost:8080/swagger/taxii-client-api-0.5.yml`
 
+## Viewers
+
+1. Swagger-Ui: `http://localhost:8080/swagger-ui/index.html`
+1. ReDoc: `http://localhost:8080/redoc/index.html`
+1. RapiDoc: `http://localhost:8080/rapidoc/index.html`
+
 ## Redoc: Swagger Viewer
 
 The server provides a [ReDoc](https://github.com/Redocly/redoc) view for the OpenAPI/Swagger file
@@ -56,16 +62,3 @@ The ReDoc viewer will load any theme and js dependencies CDNs.
 ![redoc 3](./docs/redoc-examples/3.png)
 ![redoc 4](./docs/redoc-examples/4.png)
 ![redoc 5](./docs/redoc-examples/5.png)
-
-
-# Development Notes
-
-## ReDoc assemble:
-
-Assemble with ReDoc files: (will not require the below when fixed: https://github.com/micronaut-projects/micronaut-openapi/issues/108)
-
-ReDoc viewer only:`JAVA_TOOL_OPTIONS=-Dmicronaut.openapi.views.spec=redoc.enabled=true ./gradlew --no-daemon clean assemble`
-
-Full set of viewers: `JAVA_TOOL_OPTIONS=-Dmicronaut.openapi.views.spec=redoc.enabled=true,rapidoc.enabled=true,swagger-ui.enabled=true,swagger-ui.theme=flattop ./gradlew --no-daemon clean assemble`
-
-**Note:** Internet is required for the viewers to download and load through the CDNs
